@@ -1,5 +1,15 @@
+import NowPlayingMves from "../Hooks/NowPlayingMves"
+import { Header } from "./Header"
+import {Maincomp} from "./Maincomp"
+import {Secondarycomp} from "./Secondarycomp"
+
 export const Browse=()=>{
+
+   NowPlayingMves();
+
     return(<div>
-        Browse
+        <Header/>
+        <Maincomp/>
+        <Secondarycomp/>
     </div>)
 }

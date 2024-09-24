@@ -1,11 +1,15 @@
-
+import appStore from './UTILS/appStore';
 import './App.css';
 import { Body } from './COMPONENTS/Body';
-
+import {Provider} from "react-redux"
 function App() {
   return (
-    <h1 className="text-3xl font-bold underline">
-     <Body/>
+    <h1 >
+    
+    <Provider store={appStore}>
+    <Body/>
+    </Provider>
+    
     </h1>
   );
 }
