@@ -70,13 +70,11 @@ export const Login=()=>{
     const ToggleSign=()=>{
       setSignin(!Signin)}
 
-    return(<div className="">
-          
-         <Header/>
-
-            
-            <img className=" absolute w-full"src={Logo} alt="Logo"/>
-            
+    return(<div>
+          <Header/>
+         <div>
+            <img className=" absolute  w-screen"src={Logo} alt="Logo"/>
+            </div>
               <form onSubmit={ (e)=>e.preventDefault() } 
               className="w-3/12 absolute py-3 bg-black mx-auto right-0 left-0 my-40 h-fit text-white text-lg bg-opacity-80  ">
 

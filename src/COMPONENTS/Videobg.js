@@ -19,9 +19,9 @@ const Videodta=async()=>{
 
    const Filterdata =Json.results.filter((video)=>video.type==="Trailer")
     const trailer = Filterdata.length? Filterdata[0] : Json.results[0]
-    console.log(trailer)
+
       dispatch(addMoviesTrailer(trailer))
-      console.log(bgtrailerid)
+      
       
 }
 useEffect(()=>{
