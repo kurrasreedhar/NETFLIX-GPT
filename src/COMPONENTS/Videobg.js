@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import {options} from "../UTILS/Contants"
 import { useDispatch, useSelector } from "react-redux"
-import {addMoviesTrailer } from "./moviesSlice"
+import {addMoviesTrailer } from "../UTILS/moviesSlice"
 
 
 export const VideoBg=({movieId})=>{
@@ -12,18 +12,11 @@ const bgtrailerid= useSelector(store=>store.movies?.bckGroundTrailer)
  
 const Videodta=async()=>{
    const data= await fetch('https://api.themoviedb.org/3/movie/'+ movieId + '/videos?language=en-US', options)
-
-
    const Json= await data.json()
-   
-
-   const Filterdata =Json.results.filter((video)=>video.type==="Trailer")
-    const trailer = Filterdata.length? Filterdata[0] : Json.results[0]
-
-      dispatch(addMoviesTrailer(trailer))
-      
-      
-}
+    const Filterdata =Json.results.filter((video)=>video.type==="Trailer")
+    const trailer = Filterdata.length? Filterdata[1] : Json.results[0]
+    dispatch(addMoviesTrailer(trailer))
+      }
 useEffect(()=>{
 Videodta()
 },[])
