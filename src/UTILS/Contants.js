@@ -6,3 +6,8 @@ export const options = {
     }
   };
   export const CDN_IMG="https://image.tmdb.org/t/p/w200"
+  export const SupportedLanguage=[
+    {identifier:"en",name:"English"},
+    {identifier:"hindi",name:"Hindi"},
+    {identifier:"spanish",name:"Spanish"}
+  ]

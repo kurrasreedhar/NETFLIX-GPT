@@ -4,7 +4,7 @@
 import { options } from "../UTILS/Contants"
 import { useEffect } from "react"
 import { useDispatch } from "react-redux"
-import { addToprated } from "../COMPONENTS/moviesSlice"
+import { addToprated } from "../UTILS/moviesSlice"
 
 
 const TopRated = ()=>{ 

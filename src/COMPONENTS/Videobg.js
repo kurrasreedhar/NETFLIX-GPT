@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import {options} from "../UTILS/Contants"
 import { useDispatch, useSelector } from "react-redux"
-import {addMoviesTrailer } from "./moviesSlice"
+import {addMoviesTrailer } from "../UTILS/moviesSlice"
 
 
 export const VideoBg=({movieId})=>{

@@ -6,7 +6,7 @@ import {createUserWithEmailAndPassword } from "firebase/auth";
 import {auth} from "../UTILS/firebase"
 import {signInWithEmailAndPassword } from "firebase/auth";
 import { updateProfile } from "firebase/auth";
-import { addUser } from "./userSlice";
+import { addUser } from "../UTILS/userSlice";
 import { useDispatch } from "react-redux";
 
 export const Login=()=>{
@@ -72,9 +72,9 @@ export const Login=()=>{
 
     return(<div>
           <Header/>
-         <div>
-            <img className=" absolute  w-screen"src={Logo} alt="Logo"/>
-            </div>
+         <div className="relative w-screen h-screen overflow-hidden">
+            <img className=" absolute  w-screen "src={Logo} alt="Logo"/>
+           
               <form onSubmit={ (e)=>e.preventDefault() } 
               className="w-3/12 absolute py-3 bg-black mx-auto right-0 left-0 my-40 h-fit text-white text-lg bg-opacity-80  ">
 
@@ -82,13 +82,13 @@ export const Login=()=>{
                {Signin ? "Sign In" : "Sign Up"  }  </h1>
 
          { !Signin &&   <input ref={name} type="text" placeholder="Full Name"  
-         className="  text-sm w-9/12 p-2 mx-12 my-4 bg-slate-600 rounded-xl"/>}
+         className="  text-sm w-9/12 p-3 mx-12 my-4 bg-slate-600 rounded-xl"/>}
 
             <input  ref = {email} type="text" placeholder="Email Address"  
-            className="text-sm w-9/12 p-2 mx-12 my-4 bg-slate-600 rounded-xl"/>
+            className="text-sm w-9/12 p-3 mx-12 my-4 bg-slate-600 rounded-xl"/>
 
             <input ref={password} type="password" placeholder="Password" 
-            className="text-sm w-9/12 p-2 mx-12 my-4 bg-slate-600 rounded-xl" />
+            className="text-sm w-9/12 p-3 mx-12 my-4 bg-slate-600 rounded-xl" />
 
             <p className="text-bold text-red-700">{errormsg}</p>
             <button className="bg-red-700  text-sm w-9/12 p-3 mx-12 my-3 rounded-xl" 
@@ -97,6 +97,6 @@ export const Login=()=>{
             <p className="mx-10 my-3 cursor-pointer text-blue-500 underline" 
             onClick={ToggleSign}>  {Signin ? "New to Netflix! SignUp Now" : " Already a member? signIn now "}</p>
             </form>
-         
+            </div>
          </div>)
 }

@@ -3,7 +3,7 @@
 import { options } from "../UTILS/Contants"
 import { useEffect } from "react"
 import { useDispatch } from "react-redux"
-import { addPopular } from "../COMPONENTS/moviesSlice"
+import { addPopular } from "../UTILS/moviesSlice"
 
 
 const Popular = ()=>{ 
