@@ -9,5 +9,4 @@ export const options = {
   export const SupportedLanguage=[
     {identifier:"en",name:"English"},
     {identifier:"hindi",name:"Hindi"},
-    {identifier:"spanish",name:"Spanish"}
-  ]
+    {identifier:"spanish",name:"Spanish"}]
