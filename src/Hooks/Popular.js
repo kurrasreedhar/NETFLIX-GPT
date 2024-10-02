@@ -3,7 +3,7 @@
 import { options } from "../UTILS/Contants"
 import { useEffect } from "react"
 import { useDispatch } from "react-redux"
-import { addPopular } from "../UTILS/moviesSlice"
+import { addPopular } from "../COMPONENTS/moviesSlice"
 
 
 const Popular = ()=>{ 
@@ -15,9 +15,9 @@ const dispatch = useDispatch()
 
     const GetPopular = async()=>{
          const data= await fetch('https://api.themoviedb.org/3/movie/popular?&page=1', options)
-        const Mdata = await data?.json()
+        const Mdata = await data.json()
    
-        dispatch(addPopular(Mdata?.results))
+        dispatch(addPopular(Mdata.results))
         
     }}
 

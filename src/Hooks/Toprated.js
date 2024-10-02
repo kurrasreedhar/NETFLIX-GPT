@@ -4,7 +4,7 @@
 import { options } from "../UTILS/Contants"
 import { useEffect } from "react"
 import { useDispatch } from "react-redux"
-import { addToprated } from "../UTILS/moviesSlice"
+import { addToprated } from "../COMPONENTS/moviesSlice"
 
 
 const TopRated = ()=>{ 
@@ -16,9 +16,9 @@ const dispatch = useDispatch()
 
     const GetTopRated = async()=>{
          const data= await fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', options)
-        const Mdata = await data?.json()
+        const Mdata = await data.json()
    
-        dispatch(addToprated(Mdata?.results))
+        dispatch(addToprated(Mdata.results))
         
     }}
 
