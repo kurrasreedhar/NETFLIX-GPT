@@ -4,7 +4,7 @@ import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 export const Movielist = ({ title, movies }) => {
     const sliderRef = useRef(null);
-    const scrollAmount = 200; // The amount to scroll when clicking the navigation button
+    const scrollAmount = 450; // The amount to scroll when clicking the navigation button
 return (
         <div>
             <div className='flex justify-between'>
@@ -24,7 +24,7 @@ return (
                     </button>
                 </div>
             </div>
-            <div className="flex overflow-hidden" ref={sliderRef} style={{transition: "0.5s" }}>
+            <div className="flex overflow-hidden" ref={sliderRef} style={{scrollBehavior:"smooth", transition:"0.4s" }}>
                 <div className="flex pl-16  "  >
                     {movies?.map((x) => (
                         <Moviecard key={x?.id} poster_path={x?.poster_path} />
