@@ -11,4 +11,4 @@ export const options = {
     {identifier:"hindi",name:"Hindi"},
     {identifier:"spanish",name:"Spanish"}]
 
-    export const OPENAI_API_KEY='AIzaSyD28qAeQAwTVzm_eyCErn4vGEPJo8kLlI4'
+    export const OPENAI_API_KEY=''
