@@ -73,10 +73,10 @@ export const Login=()=>{
     return(<div>
           <Header/>
          <div className="relative w-screen h-screen overflow-hidden">
-            <img className=" absolute  w-screen "src={Logo} alt="Logo"/>
+            <img className="absolute h-screen object-cover md:absolute w-screen "src={Logo} alt="Logo"/>
            
               <form onSubmit={ (e)=>e.preventDefault() } 
-              className="w-3/12 absolute py-3 bg-black mx-auto right-0 left-0 my-40 h-fit text-white text-lg bg-opacity-80  ">
+              className="w-11/12 md:w-3/12 absolute py-3 bg-black mx-auto right-0 left-0 my-40 h-fit text-white text-lg bg-opacity-80  ">
 
             <h1 className="font-bold  text-2xl p-3 mx-12 my-4 ">
                {Signin ? "Sign In" : "Sign Up"  }  </h1>

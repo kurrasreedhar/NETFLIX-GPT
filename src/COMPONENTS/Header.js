@@ -54,10 +54,10 @@ export const Header=()=>{
 
 
     return( 
-      <div className=" absolute  w-screen px-8 py-2 bg-gradient-to-b from-black z-10  flex justify-between">
-              <img className="w-44" src={Nlogo} alt="logo" />
+      <div className=" absolute  w-screen px-8 py-2 bg-gradient-to-b from-black z-10  flex flex-col md:flex-row justify-between">
+              <img className="w-44 mx-auto md:mx-0" src={Nlogo} alt="logo" />
       { user &&
-       <div className="flex mt-3 ">
+       <div className="flex justify-between md:flex mt-3 ">
        { Value && <select className="p-2 m-3 pt-2 rounded-lg bg-slate-600 text-white" onChange={HandLeChangeLang}>
           { SupportedLanguage.map((lang)=>(
               <option key={lang.identifier} value={lang.identifier}>
@@ -65,10 +65,10 @@ export const Header=()=>{
               </option>))
           }
         </select>}
-        <button className="bg-indigo-900 text-sm text-white px-3 m-3 mt-2  mr-10 rounded-lg " onClick={Handlegpt} > 
+        <button className="bg-indigo-900  text-lg md:text-lg text-white px-3 m-3 mt-2  mr-10 rounded-lg " onClick={Handlegpt} > 
           {Value? "Home" : "Gpt search"}</button>
-        <img className="w-12 h-12 " alt="usericon" src={ULogo} />
-               <button  className="font-bold text-white -mt-2" onClick={Handlesignout}>Sign Out</button> 
+        <img className="w-0 h-0 md:w-12 md:h-12 " alt="usericon" src={ULogo} />
+               <button  className=" font-bold text-white -mt-2" onClick={Handlesignout}>Sign Out</button> 
        </div>}
        </div>)
 }

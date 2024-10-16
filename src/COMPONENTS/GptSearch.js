@@ -4,9 +4,13 @@ import { GptMoviesSuggestion } from "./GptMoviesSuggestion"
 
 
 export const GptSearch=()=>{
-    return(<div className="">
-        <img className=" fixed w-screen  -z-20"src={Logo} alt="Logo"/>
-        <GptSearchBar/>
+    return(
+    <><div className="fixed -z-10">
+        <img className="h-screen w-screen object-cover"src={Logo} alt="Logo"/>
+        </div>
+    <div className="">
+      <GptSearchBar/>
         <GptMoviesSuggestion/>
-    </div>)
+     </div>
+    </>)
     }

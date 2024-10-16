@@ -1,32 +1,15 @@
-import { useEffect } from "react"
-import {options} from "../UTILS/Contants"
-import { useDispatch, useSelector } from "react-redux"
-import {addMoviesTrailer } from "../UTILS/moviesSlice"
+import {  useSelector } from "react-redux"
+import useTrailer from "../Hooks/Trailer"
+
 
 
 export const VideoBg=({movieId})=>{
 
    
-const dispatch=useDispatch()
 const bgtrailerid= useSelector(store=>store.movies?.bckGroundTrailer)
- 
-const Videodta=async()=>{
-   const data= await fetch('https://api.themoviedb.org/3/movie/'+ movieId + '/videos?language=en-US', options)
+  useTrailer(movieId)
 
 
-   const Json= await data.json()
-   
-
-   const Filterdata =Json.results.filter((video)=>video.type==="Trailer")
-    const trailer = Filterdata.length? Filterdata[0] : Json.results[0]
-
-      dispatch(addMoviesTrailer(trailer))
-      
-      
-}
-useEffect(()=>{
-Videodta()
-},[])
     return(<div className="">
         <iframe className=" w-screen aspect-video" 
         

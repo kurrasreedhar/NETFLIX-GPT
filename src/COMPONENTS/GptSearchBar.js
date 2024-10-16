@@ -20,7 +20,7 @@ export const GptSearchBar=()=>{
     return array.results
   }  
   const HandleGptSearch= async()=>{
-    console.log(inputValues.current.value);
+    console.log(inputValues?.current?.value);
     const model = genAI.getGenerativeModel({ model: "gemini-pro" });
         const gptQuery = "Act as a Movie Recommendation system and suggest some movies for the query : " 
                           + inputValues.current.value + 
@@ -37,10 +37,10 @@ export const GptSearchBar=()=>{
            
   } 
 
-    return(<div className="flex justify-center pt-[7%]"> 
-        <form onSubmit={(e)=>e.preventDefault()} className= " w-1/2  bg-black grid grid-cols-12">
-            <input ref={inputValues} className="  p-2 m-3 col-span-10 "type="text" placeholder={language[selectlang]?.GptPlaceholder} />
-            <button  className="bg-red-800 p-2 m-2 col-span-2 text-white rounded-lg" 
+    return(<div className="flex justify-center pt-[40%] md:pt-[7%]"> 
+        <form onSubmit={(e)=>e.preventDefault()} className= " w-full md:w-1/2  bg-black grid grid-cols-12">
+            <input ref={inputValues} className=" p-2 m-2 col-span-10 "type="text" placeholder={language[selectlang]?.GptPlaceholder} />
+            <button  className="bg-red-800   p-1 m-2  col-span-2 text-white rounded-lg" 
             onClick={HandleGptSearch}
             > {language[selectlang]?.Search}</button>
         </form>
